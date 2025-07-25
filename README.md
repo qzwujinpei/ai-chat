@@ -47,7 +47,7 @@ vue3+AI+chat项目基于 **Vue3 + SpringBoot3** 技术栈，仿照 DeepSeek 官�
 #### 安装步骤
 1. 克隆项目到本地：
    ```sh
-   git clone https://gitee.com/wujinpei/ai-chat.git
+   https://github.com/qzwujinpei/ai-chat.git
    ```
 2. 安装依赖：
    ```sh
