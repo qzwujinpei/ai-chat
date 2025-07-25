@@ -1,0 +1,172 @@
+* {
+  box-sizing: border-box;
+  background-repeat: no-repeat;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+  line-height: 1;
+  padding: 0;
+  background-color: #fbfcff;
+}
+
+article,
+aside,
+footer,
+header,
+nav,
+section,
+main,
+figcaption,
+figure,
+menu,
+details {
+  display: block;
+}
+
+audio,
+canvas,
+video {
+  display: inline-block;
+}
+
+img {
+  display: block;
+  border: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+address,
+cite,
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  background-color: transparent;
+  font-size: inherit;
+  color: inherit;
+  text-decoration: none;
+
+  &:active,
+  &:hover {
+    outline: 0;
+  }
+}
+
+:focus {
+  outline: 0;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+  font-size: inherit;
+}
+
+[type='number'] {
+  appearance: textfield; // 添加标准属性
+  -moz-appearance: textfield; // 添加Mozilla前缀属性
+  -webkit-appearance: textfield; // 保留WebKit前缀属性
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+    height: auto;
+    appearance: none; // 添加标准属性
+    -webkit-appearance: none; // 保留WebKit前缀属性
+  }
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  padding: 0;
+  line-height: normal;
+
+  &::-webkit-input-placeholder {
+    font-weight: 300;
+  }
+
+  &::-ms-input-placeholder {
+    font-weight: 300;
+  }
+
+  &::-moz-placeholder {
+    font-weight: 300;
+  }
+}
+
+[type='number'] {
+  appearance: textfield; // 添加标准属性
+  -moz-appearance: textfield; // 添加Mozilla前缀属性
+  -webkit-appearance: textfield; // 保留WebKit前缀属性
+
+  &::-webkit-inner-spin-button,
+  &::-webkit-outer-spin-button {
+    margin: 0;
+    height: auto;
+    appearance: none; // 添加标准属性
+    -webkit-appearance: none; // 保留WebKit前缀属性
+  }
+}
+
+[type='search'] {
+  appearance: textfield; // 添加标准属性
+  -webkit-appearance: textfield; // 保留WebKit前缀属性
+
+  &::-webkit-search-cancel-button,
+  &::-webkit-search-decoration {
+    appearance: none; // 添加标准属性
+    -webkit-appearance: none; // 保留WebKit前缀属性
+  }
+}
+
+select {
+  appearance: none; // 添加标准属性
+  -webkit-appearance: none; // 保留WebKit前缀属性
+  background-color: #fff;
+}
+
+textarea {
+  overflow: auto;
+  resize: none;
+  appearance: none; // 添加标准属性
+  -webkit-appearance: none; // 保留WebKit前缀属性
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

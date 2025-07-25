@@ -1,0 +1,62 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://host.docker.internal:3306/aichat
+    username: root
+    password: aa123456
+    hikari:
+      maximum-pool-size: 10  # 根据实际需求调整连接池大小
+      minimum-idle: 5
+      connection-timeout: 30000  # 连接超时时间（毫秒）
+      idle-timeout: 600000  # 空闲超时时间（毫秒）
+      max-lifetime: 1800000  # 最大生命周期（毫秒）
+  ai:
+    ollama:
+      base-url: http://host.docker.internal:11434
+      chat:
+        model: deepseek-r1:1.5b
+    openai:
+      api-key: sk-934be2fecdda4f0e81b9b4ac8c0c36bf
+      base-url: https://dashscope.aliyuncs.com/compatible-mode
+      chat:
+        options:
+          model: qwen-max
+  data:
+    redis:
+      host: host.docker.internal
+      database: 1
+      port: 6379
+    mongodb:
+      database: test
+      authentication-database: admin
+      uri: mongodb://root:123456@host.docker.internal:27017
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+  configuration:
+    map-underscore-to-camel-case: true
+    default-enum-type-handler: com.baomidou.mybatisplus.core.handlers.MybatisEnumTypeHandler
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  type-aliases-package: com.itheima.big-event-pojo.Entity
+
+itheima:
+  jwt:
+    secret-key: itheima
+    ttl-millis: 86400000
+    token-name: Authorization
+  alioss:
+    endpoint: oss-cn-beijing.aliyuncs.com
+    access-key-id: LTAI5tADGQnPnS7UQzZFdEbL
+    access-key-secret: V4uNh6RyTG2j3cnqxR0pA85vPqIXZj
+    bucket-name: pets-society-event
+server:
+  port: 8080
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: debug
+    com.dhl.aichat: debug

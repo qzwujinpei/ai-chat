@@ -1,0 +1,46 @@
+version: "3"
+
+services:
+  ai-chat-backend:
+    #需要修改镜像名称
+    container_name: ai-chat-backend
+    #build:
+    #  context: .
+    image: yzt/ai-chat-backend
+    restart: unless-stopped
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 8080:8080
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - ai-network
+  front:
+    #需要修改镜像名称
+    container_name: ai-chat-web
+    image: swr.cn-north-4.myhuaweicloud.com/ddn-k8s/docker.io/nginx:latest
+    restart: always
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - ../ai-chat-web/config/nginx.conf:/etc/nginx/nginx.conf:rw
+      - ../ai-chat-web/config/my_server_block.conf:/etc/nginx/conf.d/my_server_block.conf:rw
+      - ../ai-chat-web/dist:/app
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 5173:5173
+    depends_on:
+      - ai-chat-backend
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    networks:
+      - ai-network
+
+networks:
+  ai-network:
+    driver: bridge

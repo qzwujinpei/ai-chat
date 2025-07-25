@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: ai-chat-backend
+  devtools:
+    restart:
+      enabled: false  # 是否开启热部署
+      additional-paths: src/main/java # 热部署路径
+      exclude: WEB-INF/**
+  freemarker:
+    cache: false    # 是否开启模板缓存
+  profiles:
+    active: dev
+
