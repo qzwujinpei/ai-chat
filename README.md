@@ -65,7 +65,7 @@ vue3+AI+chat项目基于 **Vue3 + SpringBoot3** 技术栈，仿照 DeepSeek 官�
 ### 后端环境搭建
 
 #### 前置条件
-- **JDK 17+**：SpringBoot3 需要 JDK 17 或更高版本。
+- **JDK 21+**：SpringBoot3 需要 JDK 21 或更高版本。
 - **Maven 3.9+**：用于构建后端项目。
 - **MySQL**：数据库服务，需提前安装并启动。
 - **Redis**：缓存服务，需提前安装并启动。
